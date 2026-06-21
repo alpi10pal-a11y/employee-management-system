@@ -1,0 +1,25 @@
+<h2>Employee List</h2>
+
+<table border="1">
+<tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Role</th>
+</tr>
+
+<tr th:each="emp : ${employees}">
+    <td th:text="${emp.id}"></td>
+    <td th:text="${emp.name}"></td>
+    <td th:text="${emp.role}"></td>
+</tr>
+<tr th:each="emp : ${employees}">
+    <td th:text="${emp.id}"></td>
+    <td th:text="${emp.name}"></td>
+    <td th:text="${emp.role}"></td>
+    <td>
+        <a th:href="@{'/delete/' + ${emp.id}}">Delete</a>
+    </td>
+</tr>
+</table>
+
+<a href="/add">Add Employee</a>
